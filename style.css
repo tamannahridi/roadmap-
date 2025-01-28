@@ -1,134 +1,106 @@
-/* Basic Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f3f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
-.container {
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Cover Page Styles */
+#coverPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
 }
 
-/* Landing Page Styles */
-#landing-page h1 {
-    font-size: 2rem;
-    color: #333;
+#coverPage h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-#start-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+#coverPage p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 
-#start-btn:hover {
-    background-color: #45a049;
+#startBtn {
+  background-color: #D4AF37;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-/* Roadmap Styles */
-.roadmap-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    position: relative;
+#startBtn:hover {
+  background-color: #B88600;
 }
 
-.stop {
-    width: 100px;
-    height: 100px;
-    background-color: #eee;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    position: relative;
+/* Home Page Styles */
+#homePage {
+  padding: 2rem;
 }
 
-.stop-title {
-    font-weight: bold;
+#phases {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.lock {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    font-size: 1.5rem;
-    display: none;
+.phaseButton {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
 }
 
-#stop1 .lock {
-    display: none;
+.phaseButton.locked {
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 
-/* Tasks Form */
-#tasks {
-    margin-top: 40px;
-    text-align: left;
+.phaseButton.unlocked {
+  background-color: #D4AF37;
 }
 
-#task-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+.phaseButton.unlocked:hover {
+  background-color: #B88600;
 }
 
-#task-form button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Phase Task Window Styles */
+#phaseWindow {
+  padding: 2rem;
 }
 
-#task-form button:hover {
-    background-color: #45a049;
+#phaseTasks label {
+  display: block;
+  margin: 10px 0;
 }
 
-/* Congratulations Page */
-#congrats-page {
-    margin-top: 40px;
-    font-size: 1.5rem;
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #D4AF37;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
-#congrats-page a {
-    font-size: 1.2rem;
-    color: #007BFF;
-    text-decoration: none;
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 
-#congrats-page a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .roadmap-container {
-        flex-direction: column;
-    }
-    .stop {
-        width: 80px;
-        height: 80px;
-        margin: 10px 0;
-    }
+button:hover:not(:disabled) {
+  background-color: #B88600;
 }
