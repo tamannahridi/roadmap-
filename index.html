@@ -8,30 +8,48 @@
 </head>
 <body>
   <!-- Cover Page -->
-  <div id="coverPage">
-    <h1>Contemporary x International Roadmap</h1>
-    <p>Subtitle goes here</p>
-    <button id="startBtn">Start</button>
+  <div id="cover-page" class="page">
+    <h1 class="title">Contemporary x International Roadmap</h1>
+    <p class="subtitle">Your guide to success, one phase at a time</p>
+    <button id="start-button">Start</button>
   </div>
 
   <!-- Home Page -->
-  <div id="homePage" style="display: none;">
-    <h1>Welcome to the Home Page</h1>
-    <div id="phases">
-      <button id="phase1" class="phaseButton unlocked" onclick="showPhase(1)">Phase 1</button>
-      <button id="phase2" class="phaseButton locked" disabled onclick="showPhase(2)">Phase 2</button>
-      <button id="phase3" class="phaseButton locked" disabled onclick="showPhase(3)">Phase 3</button>
-      <button id="phase4" class="phaseButton locked" disabled onclick="showPhase(4)">Phase 4</button>
-      <button id="phase5" class="phaseButton locked" disabled onclick="showPhase(5)">Phase 5</button>
+  <div id="home-page" class="page hidden">
+    <h1 class="title">Contemporary x International Roadmap</h1>
+    <div class="phases">
+      <div class="phase" data-phase="1">
+        <button id="phase1" class="phase-button">Phase 1</button>
+      </div>
+      <div class="phase" data-phase="2">
+        <button id="phase2" class="phase-button locked" disabled>Phase 2</button>
+      </div>
+      <div class="phase" data-phase="3">
+        <button id="phase3" class="phase-button locked" disabled>Phase 3</button>
+      </div>
+      <div class="phase" data-phase="4">
+        <button id="phase4" class="phase-button locked" disabled>Phase 4</button>
+      </div>
+      <div class="phase" data-phase="5">
+        <button id="phase5" class="phase-button locked" disabled>Phase 5</button>
+      </div>
     </div>
   </div>
 
-  <!-- Phase Task Window -->
-  <div id="phaseWindow" style="display: none;">
-    <h2 id="currentPhase"></h2>
-    <div id="phaseTasks"></div>
-    <button id="nextBtn" onclick="nextPhase()" disabled>Next</button>
-    <button onclick="goToHomePage()">Return to Home</button>
+  <!-- Task Window -->
+  <div id="task-window" class="window hidden">
+    <h2 id="task-title"></h2>
+    <ul id="task-list"></ul>
+    <button id="return-button">Return</button>
+    <button id="next-button" disabled>Next</button>
+  </div>
+
+  <!-- Congratulations Page -->
+  <div id="congratulations-page" class="page hidden">
+    <h1>Congratulations!</h1>
+    <p>You have completed all phases.</p>
+    <a href="https://example.com/form" target="_blank">Click here to fill out the form</a>
+    <button id="home-button">Home</button>
   </div>
 
   <script src="script.js"></script>
