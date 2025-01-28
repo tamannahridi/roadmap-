@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Roadmap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #0078d7;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .checkbox-container {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .checkbox-container label {
+      display: block;
+      margin: 10px 0;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    .feedback-link {
+      color: #0078d7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .feedback-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cover-page" class="container active">
+  <h1>Contemporary x International Roadmap</h1>
+  <button class="button" onclick="showPage(1)">Start</button>
+</div>
+
+<div id="phase-1" class="container">
+  <h1>Phase 1: Arrival & Introduction</h1>
+  <div class="checkbox-container">
+    <label><input type="checkbox" class="task"> Check in with the retail manager.</label>
+    <label><input type="checkbox" class="task"> Meet team members.</label>
+    <label><input type="checkbox" class="task"> Take a brief floor walk.</label>
+  </div>
+  <button class="button" disabled onclick="showPage(2)">Next</button>
+</div>
+
+<div id="phase-2" class="container">
+  <h1>Phase 2: Learning the Department</h1>
+  <div class="checkbox-container">
+    <label><input type="checkbox" class="task"> Familiarize with all brands.</label>
+    <label><input type="checkbox" class="task"> Learn key products.</label>
+    <label><input type="checkbox" class="task"> Understand seasonal trends.</label>
+  </div>
+  <button class="button" disabled onclick="showPage(3)">Next</button>
+</div>
+
+<div id="phase-3" class="container">
+  <h1>Phase 3: Engage with Customers</h1>
+  <div class="checkbox-container">
+    <label><input type="checkbox" class="task"> Shadow team members.</label>
+    <label><input type="checkbox" class="task"> Assist customers.</label>
+    <label><input type="checkbox" class="task"> Promote cross-department sales.</label>
+  </div>
+  <button class="button" disabled onclick="showPage(4)">Next</button>
+</div>
+
+<div id="phase-4" class="container">
+  <h1>Phase 4: Network and Ask Questions</h1>
+  <div class="checkbox-container">
+    <label><input type="checkbox" class="task"> Ask for tips.</label>
+    <label><input type="checkbox" class="task"> Learn selling techniques.</label>
+    <label><input type="checkbox" class="task"> Build rapport.</label>
+  </div>
+  <button class="button" disabled onclick="showPage(5)">Next</button>
+</div>
+
+<div id="phase-5" class="container">
+  <h1>Phase 5: Document Learnings</h1>
+  <div class="checkbox-container">
+    <label><input type="checkbox" class="task"> Write down key knowledge.</label>
+    <label><input type="checkbox" class="task"> Note cross-selling ideas.</label>
+    <label><input type="checkbox" class="task"> Prepare for feedback submission.</label>
+  </div>
+  <button class="button" disabled onclick="showPage('congrats')">Next</button>
+</div>
+
+<div id="congrats-page" class="container">
+  <h1>Congratulations!</h1>
+  <h2>You’ve successfully completed your roadmap!</h2>
+  <p>Please fill out the feedback form below:</p>
+  <a href="http://example.com/feedback" class="feedback-link" target="_blank">Submit Feedback</a>
+</div>
+
+<script>
+  function showPage(page) {
+    document.querySelectorAll('.container').forEach(el => el.classList.remove('active'));
+    if (page === 'congrats') {
+      document.getElementById('congrats-page').classList.add('active');
+    } else {
+      document.getElementById(`phase-${page}`).classList.add('active');
+    }
+  }
+
+  document.querySelectorAll('.container').forEach(container => {
+    const checkboxes = container.querySelectorAll('.task');
+    const button = container.querySelector('.button');
+    if (checkboxes.length) {
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          button.disabled = ![...checkboxes].every(cb => cb.checked);
+        });
+      });
+    }
+  });
+</script>
+<script src="script.js">
+</script>
+</body>
+</html>

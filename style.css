@@ -1,0 +1,134 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Landing Page Styles */
+#landing-page h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+#start-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+}
+
+/* Roadmap Styles */
+.roadmap-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    position: relative;
+}
+
+.stop {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.stop-title {
+    font-weight: bold;
+}
+
+.lock {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 1.5rem;
+    display: none;
+}
+
+#stop1 .lock {
+    display: none;
+}
+
+/* Tasks Form */
+#tasks {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#task-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#task-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#task-form button:hover {
+    background-color: #45a049;
+}
+
+/* Congratulations Page */
+#congrats-page {
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
+
+#congrats-page a {
+    font-size: 1.2rem;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#congrats-page a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .roadmap-container {
+        flex-direction: column;
+    }
+    .stop {
+        width: 80px;
+        height: 80px;
+        margin: 10px 0;
+    }
+}
